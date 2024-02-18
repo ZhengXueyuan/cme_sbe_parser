@@ -544,6 +544,7 @@ if __name__ == "__main__":
                 tmp_str= (f"/// {group_description}" if group_description else "")\
                         + f" id: {group_id}\n"\
                         + f"struct {group_name} {{\n"\
+                        + f"static constexpr int id {{FIELD_ID_{group_name}}}; ///< id = {group_id}\n"\
                         + f"using DimensionType = {group_dimension_type};\n"
                 for group_member_str in group_member_strs:
                     tmp_str += group_member_str
